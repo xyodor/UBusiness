@@ -2,7 +2,17 @@
 
 @mixin queries() {
     @media (max-width: res.$sm) {
-
+        .right {
+            flex-direction: column-reverse;
+            .bottom {
+                .texts {
+                    h1 {
+                        width: 100% !important;
+                        font-size: 4em;
+                    }
+                }
+            }
+        }
     }
 
     @media (min-width: res.$sm) {
