@@ -1,0 +1,41 @@
+$svg_values: (
+    1: 19%,
+    2: 1%,
+    3: 71%,
+    4: 0%,
+    5: 13%,
+    6: 30%
+);
+
+@mixin head_animation($y_value, $key_num) {
+    $step: 2;
+    @keyframes shapemove#{$key_num} {
+        0% {
+            y: $y_value + $step;
+        }
+
+        100% {
+            y: $y_value - $step;
+        }
+    }
+}
+
+@mixin make_head_animation() {
+    @each $key, $value in $svg_values {
+        @include head_animation($value, $key)
+    }
+    $delay_value: 0;
+    @for $num from 1 through 6 {
+        #mv-#{$num} {
+            animation-name: shapemove#{$num};
+            // animation: name duration timing-function delay iteration-count direction fill-mode;
+            animation-timing-function: linear;
+            animation-duration: 2s;
+            animation-delay: #{$delay_value}s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            // animation: shapemove#{$num} 0.3 linear $delay_value infinite;
+        }
+        $delay_value: $delay_value + 0.2;
+    }
+}

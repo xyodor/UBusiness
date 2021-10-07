@@ -1,0 +1,83 @@
+@use "_responsive.scss" as res;
+
+@mixin queries() {
+    @media (max-width: res.$sm) {
+
+    }
+
+    @media (min-width: res.$sm) {
+
+    }
+
+    @media (max-width: res.$md) {
+        .holder {
+            flex-direction: column;
+        }
+        .right {
+            flex-direction: column-reverse;
+            .bottom {
+                .texts {
+                    h1 {
+                        width: 60%;
+                    }
+                }
+                .contact {
+                    .flex_container { 
+                        .obj {
+                            justify-content: center;
+                        }
+
+                        
+                    }
+                }
+            }
+
+            .top {
+                .socialmedia {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .left {
+            div.logo {
+                margin-left: 50%;
+                transform: translateX(-50%);
+                .text {
+                    h2 {text-shadow: 0px -1px 7px white;}
+                    span {text-shadow: 1px 1px 1px #24313e;}
+                }
+            }
+
+            // div.main_img {
+            //     margin-top: 4em;
+            // }
+        }
+
+    }
+
+    @media (max-width: res.$lg) {
+
+        .right {
+            .bottom {
+                .contact {
+                    .flex_container {
+                        flex-direction: column;
+                        .r {
+                            flex-direction: row;
+                            .text {
+                                margin-right: 0;
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    @media (min-width: res.$xl) {
+
+    }
+}

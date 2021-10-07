@@ -1,0 +1,7 @@
+@mixin prefixit($prop, $value, $c: n, $m: n, $o: n, $ms: n) {
+    @if $c == c {-webkit-#{$prop}: #{$value};}
+    @if $m == m {-moz-#{$prop}: #{$value};}
+    @if $o == o {-o-#{$prop}: #{$value};}
+    @if $ms == ms {-ms-#{$prop}: #{$value};}
+    #{$prop}: #{$value};
+}
